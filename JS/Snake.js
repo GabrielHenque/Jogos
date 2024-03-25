@@ -3,10 +3,7 @@ const ctx = canvas.getContext("2d")
 
 const size = 30
 
-const snake = [ 
-    { x: 200, y: 200 },
-    { x: 230, y: 200 }
-]
+const snake = [{ x: 270, y: 240 }]
 
 let direction, loopId
 
@@ -47,6 +44,18 @@ const moveSnake = () => {
 
     snake.shift()
 }
+
+const drawGrid = () => {
+    ctx.lineWidth = 10
+    ctx.strokeStyle = "red"
+
+    ctx.lineTo(300, 0)
+    ctx.lineTo(300, 600)
+
+    ctx.stroke()
+}
+
+drawGrid()
 
 const gameLoop = () => {
     clearInterval(loopId)
